@@ -1,0 +1,50 @@
+:root {
+    --main-bg-color: gainsboro;
+    --player-0-color: red;
+    --player-1-color: blue;
+    --empty-slot-color: white;
+    --slot-border-color: black;
+    --slot-radius: 35;
+    --slot-shadow-size: 5;
+    --slot-shadow-color: silver;
+    --slot-margin: 10;
+    --slot-hover-border-color: gold;
+    --slot-hover-shadow-color: burlywood;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    margin: auto;
+}
+
+#board {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+.column {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.slot {
+    height: calc(var(--slot-radius) * 2px);
+    width: calc(var(--slot-radius) * 2px);
+    border: var(--slot-border-color) 1px solid;
+    border-radius: calc(var(--slot-radius) * 1px);
+    box-shadow: calc(var(--slot-shadow-size) * 1px) calc(var(--slot-shadow-size) * 1px) calc(var(--slot-shadow-size) * 1px) 0 var(--slot-shadow-color);
+    background-color: var(--empty-slot-color);
+    margin: calc(var(--slot-margin) * 1px);
+    cursor: pointer;
+}
+
+.slot:hover {
+    border: var(--slot-hover-border-color) 1px solid;
+    box-shadow: calc(var(--slot-shadow-size) * 1px) calc(var(--slot-shadow-size) * 1px) calc(var(--slot-shadow-size) * 1px) 0 var(--slot-hover-shadow-color);
+    transform: scale(1.1);
+}
