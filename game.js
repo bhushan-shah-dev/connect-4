@@ -90,14 +90,14 @@ function checkWinner(column, row) {
 
     const lists = [currentColumn, currentRow, currentDiagonal1, currentDiagonal2]
 
-
-    let longestStreak = 0;
-    let currentStreakValue = null;
     let longestStreakValue = null;
 
     outer:
     for (let i = 0; i < lists.length; i++) {
         let list = lists[i];
+        let longestStreak = 0;
+        let currentStreakValue = null;
+        longestStreakValue = null;
         for (let j = 0; j < list.length; j++) {
             let val = list[j];
             if (val === null) {
