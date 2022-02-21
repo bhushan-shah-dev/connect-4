@@ -2,6 +2,9 @@
     --main-bg-color: gainsboro;
     --player-0-color: red;
     --player-1-color: blue;
+    --start-button-bg-color: burlywood;
+    --start-button-bg-color-active: gold;
+    --start-button-border-radius: 10;
     --empty-slot-color: white;
     --slot-border-color: black;
     --slot-radius: 35;
@@ -17,8 +20,21 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: 100vh;
     margin: auto;
+}
+
+#start-button {
+    width: fit-content;
+    background-color: var(--start-button-bg-color);
+    border-radius: calc(var(--start-button-border-radius) * 1px);
+    padding: calc(var(--start-button-border-radius) * 2px);
+    font-size: 2rem;
+}
+
+#start-button:active {
+    background-color: var(--start-button-bg-color-active);
 }
 
 #board {
@@ -47,4 +63,25 @@ body {
     border: var(--slot-hover-border-color) 1px solid;
     box-shadow: calc(var(--slot-shadow-size) * 1px) calc(var(--slot-shadow-size) * 1px) calc(var(--slot-shadow-size) * 1px) 0 var(--slot-hover-shadow-color);
     transform: scale(1.1);
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--main-bg-color);
+    opacity: 0.7;
+    z-index: 100;
+}
+
+#winner-msg {
+    position: absolute;
+    top: 0;
+    left: 50vw;
+    transform: translateX(-50%);
+    padding: 20px;
+    font-size: 3rem;
+    z-index: 200;
 }
